@@ -14,10 +14,13 @@ dotenv.config();
 
 // USE HELMET AND CORS MIDDLEWARES
 app.use(
-    cors({
-        origin: ["*"], // Comma separated list of your urls to access your api. * means allow everything
-        credentials: true, // Allow cookies to be sent with requests
-    })
+    // cors({
+    //     origin: ["*"], // Comma separated list of your urls to access your api. * means allow everything
+    //     credentials: true, // Allow cookies to be sent with requests,
+    // })
+    // Commented out because with this config it misses to provide Access-Control-Allow-Origin header,
+    // so i had to simply do :
+    cors()
 );
 // app.use(
 //     helmet({
