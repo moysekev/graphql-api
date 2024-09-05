@@ -63,6 +63,21 @@ mutation {
 { "data": { "configuration": { "email": "example@email.com" } } }
 ```
 
+## get by id with sub data info
+
+`curl -i -H 'Content-Type: application/json' -X POST -d '{"query": "query {configuration(id: \"66d960225d7794de01d5cd0a\") {email name{firstName}}}"}' localhost:8500/graphql`
+
+```json
+{
+  "data": {
+    "configuration": {
+      "email": "example@email.com",
+      "name": { "firstName": "glop" }
+    }
+  }
+}
+```
+
 ## get by id, with createdAt returned
 
 `curl -i -H 'Content-Type: application/json' -X POST -d '{"query": "query {configuration(id: \"66cdc497984fff52dcefe9bb\") {email createdAt}}"}' localhost:8500/graphql`
