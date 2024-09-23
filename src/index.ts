@@ -6,6 +6,7 @@ import mongoose from "mongoose";
 // import { graphqlHTTP } from "express-graphql";
 import { createHandler } from 'graphql-http/lib/use/express';
 import schema from "./schema";
+import { test } from "./playground";
 
 const app = express();
 
@@ -51,5 +52,7 @@ const PORT = process.env.PORT || 8500;
 app.listen(PORT, () => {
     console.log(`Backend server is running at port ${PORT}`);
 });
+
+test()
 
 export default app;
