@@ -7,6 +7,7 @@ import mongoose from "mongoose";
 import { createHandler } from 'graphql-http/lib/use/express';
 import schema from "./schema";
 import { test } from "./playground";
+import { test as test_json } from "./playground_json";
 
 const app = express();
 
@@ -54,5 +55,7 @@ app.listen(PORT, () => {
 });
 
 test()
+
+test_json()
 
 export default app;
